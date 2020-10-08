@@ -59,45 +59,8 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/splash.png
-    - assets/splash2.png
-    - assets/wallpiper.png
-    - assets/no_connection.png
-    - assets/categories/3D.jpeg
-    - assets/categories/Abstract.jpeg
-    - assets/categories/Alone.jpeg
-    - assets/categories/Animals.jpeg
-    - assets/categories/Anime.jpeg
-    - assets/categories/art.jpeg
-    - assets/categories/Black.jpeg
-    - assets/categories/Cars.jpeg
-    - assets/categories/City.jpeg
-    - assets/categories/Drinks.jpeg
-    - assets/categories/Entertainment.jpeg
-    - assets/categories/Fantasy.jpeg
-    - assets/categories/Flowers.jpeg
-    - assets/categories/Food.jpeg
-    - assets/categories/Holiday.jpeg
-    - assets/categories/Macro.jpeg
-    - assets/categories/Mask.jpeg
-    - assets/categories/Motorcycles.jpeg
-    - assets/categories/Music.jpeg
-    - assets/categories/Nature.jpeg
-    - assets/categories/Neon.jpeg
-    - assets/categories/People.jpeg
-    - assets/categories/Predator.jpeg
-    - assets/categories/Smiles.jpeg
-    - assets/categories/Space.jpeg
-    - assets/categories/Sports.jpeg
-    - assets/categories/Summer.jpeg
-    - assets/categories/Technology.jpeg
-    - assets/categories/Textures.jpeg
-    - assets/categories/Vector.jpeg
-    - assets/categories/Vehicles.jpeg
-    - assets/categories/White.jpeg
-    - assets/categories/Winter.jpeg
-    - assets/categories/Words.jpeg
-    - assets/categories/world.jpeg
+    - assets/
+    - assets/categories/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

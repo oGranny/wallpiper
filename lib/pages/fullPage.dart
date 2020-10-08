@@ -97,6 +97,7 @@ class _BodyState extends State<Body> {
                     backgroundColor: Colors.transparent,
                     leading: IconButton(
                         icon: Icon(Icons.close),
+                        tooltip: "close",
                         onPressed: () => Navigator.of(context).pop()),
                     actions: [
                       kIsWeb
@@ -117,14 +118,19 @@ class _BodyState extends State<Body> {
                             ),
                       IconButton(
                         icon: Icon(Icons.favorite_outline),
-                        onPressed: () => {
+                        tooltip: "Add to favourates",
+                        onPressed: () {
+                          Scaffold.of(context).showSnackBar(SnackBar(
+                            content: Text("Added to favourates"),
+                          ));
                           setState(() {
-                            favourate
-                                .add(FavourateModel(imgPath: widget.imgPath));
-                          }),
-                          (favourate.forEach((element) {
-                            print(element.imgPath);
-                          }))
+                            favourate.add(widget.imgPath);
+                          });
+                          print("object");
+                          // (favourate.forEach((element) {
+                          //   print(element.imgPath);
+                          // }
+                          // ))
                         },
                       )
                     ],

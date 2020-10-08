@@ -89,7 +89,9 @@ class _BodyState extends State<HomeBody> {
       List tempList = new List();
       var data = JSON.jsonDecode(response.body);
       for (var i = 0; i < data["photos"].length; i++) {
-        tempList.add(data["photos"][i]["src"]["portrait"]);
+        setState(() {
+          tempList.add(data["photos"][i]["src"]["portrait"]);
+        });
       }
       setState(() {
         searchQuery = tempList;
@@ -121,25 +123,20 @@ class _BodyState extends State<HomeBody> {
                     InkWell(
                         onTap: () {
                           // searchQuery = [];
-                          print(searchController.text);
+                          // print(searchController.text);
                           // print(wallpapers);
                           // print(categories);
                           // fetchSearch(searchController.text);
-                          fetchSearch(searchController.text);
-                          print(searchQuery);
-                          if (searchController.text != "" &&
-                              searchQuery != []) {
+                          // fetchSearch(searchController.text);
+                          // print(searchQuery);
+                          if (searchController.text != "") {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => Search(
-                                    query: searchController.text,
-                                  ),
+                                      // query: searchController.text,
+                                      ),
                                 ));
-                          } else {
-                            return Center(
-                              child: CircularProgressIndicator(),
-                            );
                           }
                         },
                         child: Container(child: Icon(Icons.search)))

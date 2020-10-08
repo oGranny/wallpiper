@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:bmnav/bmnav.dart' as bmnav;
 import 'package:wallpiper/Widgets/appBar.dart';
+import 'package:wallpiper/data/data.dart';
 import 'package:wallpiper/pages/about.dart';
 import 'package:wallpiper/pages/categories.dart';
+import 'package:wallpiper/pages/favourates.dart';
 import 'package:wallpiper/pages/search.dart';
 import 'package:wallpiper/theme.dart';
 import 'Home.dart';
@@ -13,25 +15,18 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  // DarkThemeProvider themeChangeProvider = new DarkThemeProvider();
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  // }
-
-  // void getCurrentAppTheme() async {
-  //   themeChangeProvider.darkTheme =
-  //       await themeChangeProvider.darkThemePreference.getTheme();
-  // }
+  @override
+  void initState() {
+    super.initState();
+    fetchApi();
+    fetchCateggory();
+  }
 
   int currentTab = 0;
   final List<Widget> screens = [
     HomeBody(),
     CategoryB(),
-    Search(
-      query: "hello",
-    ),
+    Favourates(),
     AboutBody(),
   ];
   Widget currentScreen = HomeBody();

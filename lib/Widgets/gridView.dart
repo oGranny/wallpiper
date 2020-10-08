@@ -12,10 +12,10 @@ Widget newGrid({@required List wallpapers}) {
     itemCount: wallpapers.length,
     itemBuilder: (context, i) {
       String imgPath = wallpapers[i];
-      return new Material(
+      return Material(
         elevation: 8.0,
-        borderRadius: new BorderRadius.all(new Radius.circular(8.0)),
-        child: new InkWell(
+        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        child: InkWell(
           onTap: () {
             // var documentDirectory;
             // kIsWeb
@@ -32,19 +32,19 @@ Widget newGrid({@required List wallpapers}) {
           },
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: new Hero(
+            child: Hero(
               tag: imgPath,
-              child: new FadeInImage(
-                image: new NetworkImage(imgPath),
+              child: FadeInImage(
+                image: NetworkImage(imgPath),
                 fit: BoxFit.cover,
-                placeholder: new AssetImage("assets/splash.png"),
+                placeholder: AssetImage("assets/splash.png"),
               ),
             ),
           ),
         ),
       );
     },
-    staggeredTileBuilder: (i) => new StaggeredTile.count(2, i.isEven ? 2 : 3),
+    staggeredTileBuilder: (i) => StaggeredTile.count(2, i.isEven ? 2 : 3),
     mainAxisSpacing: 8.0,
     // physics: NeverScrollableScrollPhysics(),
     shrinkWrap: true,
@@ -60,10 +60,10 @@ Widget searchGrid({@required String query}) {
     itemCount: wallpapers.length,
     itemBuilder: (context, i) {
       String imgPath = searchQuery[i];
-      return new Material(
+      return Material(
         elevation: 8.0,
-        borderRadius: new BorderRadius.all(new Radius.circular(8.0)),
-        child: new InkWell(
+        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        child: InkWell(
           onTap: () {
             // var documentDirectory;
             // kIsWeb
@@ -80,19 +80,19 @@ Widget searchGrid({@required String query}) {
           },
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: new Hero(
+            child: Hero(
               tag: imgPath,
-              child: new FadeInImage(
-                image: new NetworkImage(imgPath),
+              child: FadeInImage(
+                image: NetworkImage(imgPath),
                 fit: BoxFit.cover,
-                placeholder: new AssetImage("assets/splash.png"),
+                placeholder: AssetImage("assets/splash.png"),
               ),
             ),
           ),
         ),
       );
     },
-    staggeredTileBuilder: (i) => new StaggeredTile.count(2, i.isEven ? 2 : 3),
+    staggeredTileBuilder: (i) => StaggeredTile.count(2, i.isEven ? 2 : 3),
     mainAxisSpacing: 8.0,
     // physics: NeverScrollableScrollPhysics(),
     shrinkWrap: true,

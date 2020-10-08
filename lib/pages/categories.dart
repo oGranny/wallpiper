@@ -3,6 +3,7 @@ import 'package:wallpiper/Widgets/appBar.dart';
 import 'package:wallpiper/Widgets/bottomNavs.dart';
 // import 'package:wallpiper/Widgets/categoryBuilder.dart';
 import 'package:wallpiper/data/data.dart';
+import 'package:wallpiper/pages/search.dart';
 import 'package:wallpiper/theme.dart';
 
 class Categories extends StatelessWidget {
@@ -44,7 +45,15 @@ class _CategoryBState extends State<CategoryB> {
                   padding: const EdgeInsets.all(5.0),
                   child: Center(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Search(
+                                  // query: searchController.text,
+                                  ),
+                            ));
+                      },
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: FadeInImage(

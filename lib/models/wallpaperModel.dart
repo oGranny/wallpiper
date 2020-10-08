@@ -13,8 +13,8 @@ class CategoryModel {
 
 class FavourateModel {
   String imgPath;
-  String title;
-  FavourateModel({@required this.imgPath, this.title});
+  bool isFav;
+  FavourateModel({@required this.imgPath, @required this.isFav});
 }
 
 class SearchModel {

@@ -40,5 +40,6 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
+
 **/test.py
 lib/apikey.dart
