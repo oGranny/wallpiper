@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:wallpiper/models/wallpaperModel.dart';
-import 'package:wallpiper/theme.dart';
 
 var path;
 List favourate = List();
@@ -184,6 +182,7 @@ class _BodyState extends State<Body> {
                       //   });
                       // });
                     },
+                    // ignore: todo
                     //TODO: impliment proper wallpaper setup for mobile
                     child: Stack(
                       children: <Widget>[

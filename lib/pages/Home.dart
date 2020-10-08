@@ -1,17 +1,12 @@
+// ignore: todo
 // * TODO: https://pub.dartlang.org/packages/intro_slider
 import 'package:wallpiper/apikey.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as JSON;
-
-// import 'package:flutter/foundation.dart';
-// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:wallpiper/Widgets/appBar.dart';
-// import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:wallpiper/Widgets/bottomNavs.dart';
 import 'package:wallpiper/Widgets/gridView.dart';
-import 'package:wallpiper/Widgets/searchBar.dart';
-// import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
 import 'package:wallpiper/data/data.dart';
 import 'package:wallpiper/pages/search.dart';
 import 'package:wallpiper/theme.dart';
@@ -78,6 +73,7 @@ class _BodyState extends State<HomeBody> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_element
     void fetchSearch(String query) async {
       http.Response response = await http.get(
         "https://api.pexels.com/v1/search?query=$query&per_page=40&page=1",

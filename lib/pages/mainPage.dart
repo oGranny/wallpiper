@@ -5,8 +5,6 @@ import 'package:wallpiper/data/data.dart';
 import 'package:wallpiper/pages/about.dart';
 import 'package:wallpiper/pages/categories.dart';
 import 'package:wallpiper/pages/favourates.dart';
-import 'package:wallpiper/pages/search.dart';
-import 'package:wallpiper/theme.dart';
 import 'Home.dart';
 
 class MainWidget extends StatefulWidget {

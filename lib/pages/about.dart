@@ -1,4 +1,3 @@
-import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wallpiper/Widgets/appBar.dart';
@@ -73,6 +72,7 @@ class _BodyState extends State<AboutBody> {
                       setState(() {});
                       // });
                       // currentTheme = DarkTheme();
+                      // ignore: todo
                       //TODO: impiment dark mode
                     }),
                     activeColor: Colors.black,
