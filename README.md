@@ -55,7 +55,6 @@
 
 | ![img](assets/screenshots/home_page.png) | ![img](assets/screenshots/category_page.png) |
 | ---------------------------------------- | -------------------------------------------- |
-|                                          |                                              |
 
 | ![img](assets/screenshots/favourates_page.png) | ![img](assets/screenshots/about_Page.png) |
 | ---------------------------------------------- | ----------------------------------------- |
