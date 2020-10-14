@@ -1,3 +1,4 @@
+import 'package:custom_splash/custom_splash.dart';
 import 'package:flutter/material.dart';
 import 'package:wallpiper/pages/mainPage.dart';
 
@@ -13,17 +14,31 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: MainWidget(),
+      home: CustomSplash(
+        imagePath: 'assets/wallpiper.png',
+        backGroundColor: Colors.white,
+        animationEffect: 'zoom-out',
+        logoSize: 200,
+        home: MainWidget(),
+        // customFunction: fetchApi_(),
+        duration: 2000,
+        type: CustomSplashType.StaticDuration,
+        // outputAndHome: op,
+      ),
     );
   }
 }
 
-class MyApp1 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Flutter Demo',
-      home: MainWidget(),
-    );
-  }
-}
+// runApp(MaterialApp(
+//     home: CustomSplash(
+//         imagePath: 'assets/flutter_icon.png',
+//         backGroundColor: Colors.deepOrange,
+//         animationEffect: 'zoom-in',
+//         logoSize: 200,
+//         home: MyApp(),
+//         customFunction: duringSplash,
+//         duration: 2500,
+//         type: CustomSplashType.StaticDuration,
+//         outputAndHome: op,
+//     ),
+// ));

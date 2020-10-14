@@ -57,12 +57,52 @@ class _BodyState extends State<Body> {
     }
   }
 
-  _setWallpaper() async {
+  _setHomeWallpaper() async {
     int location = WallpaperManager
         .HOME_SCREEN; // or location = WallpaperManager.LOCK_SCREEN;
+    // ignore: unused_local_variable
     String result;
     var file = await DefaultCacheManager().getSingleFile(widget.imgPath);
-    result = await WallpaperManager.setWallpaperFromFile(file.path, location);
+    try {
+      result = await WallpaperManager.setWallpaperFromFile(file.path, location);
+      Scaffold.of(context).showSnackBar(
+          SnackBar(content: Text("applied wallpaper successfully")));
+    } catch (e) {
+      Scaffold.of(context)
+          .showSnackBar(SnackBar(content: Text("error: ${e.message}")));
+    }
+  }
+
+  _setLockWallpaper() async {
+    int location = WallpaperManager
+        .HOME_SCREEN; // or location = WallpaperManager.LOCK_SCREEN;
+    // ignore: unused_local_variable
+    String result;
+    var file = await DefaultCacheManager().getSingleFile(widget.imgPath);
+    try {
+      result = await WallpaperManager.setWallpaperFromFile(file.path, location);
+      Scaffold.of(context).showSnackBar(
+          SnackBar(content: Text("applied wallpaper successfully")));
+    } catch (e) {
+      Scaffold.of(context)
+          .showSnackBar(SnackBar(content: Text("error: ${e.message}")));
+    }
+  }
+
+  _setBothWallpaper() async {
+    int location = WallpaperManager
+        .HOME_SCREEN; // or location = WallpaperManager.LOCK_SCREEN;
+    // ignore: unused_local_variable
+    String result;
+    var file = await DefaultCacheManager().getSingleFile(widget.imgPath);
+    try {
+      result = await WallpaperManager.setWallpaperFromFile(file.path, location);
+      Scaffold.of(context).showSnackBar(
+          SnackBar(content: Text("applied wallpaper successfully")));
+    } catch (e) {
+      Scaffold.of(context)
+          .showSnackBar(SnackBar(content: Text("error: ${e.message}")));
+    }
   }
 
   @override
@@ -87,6 +127,8 @@ class _BodyState extends State<Body> {
       Navigator.pop(context);
     }
 
+    String _value = "HOME_SCREEN";
+
     return SizedBox.expand(
       child: Container(
         decoration: BoxDecoration(
@@ -107,6 +149,28 @@ class _BodyState extends State<Body> {
                         icon: Icon(Icons.close),
                         tooltip: "close",
                         onPressed: () => Navigator.of(context).pop()),
+                    title: DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        value: _value,
+                        items: <DropdownMenuItem<String>>[
+                          DropdownMenuItem(
+                            child: Text('Home screen'),
+                            value: 'HOME_SCREEN',
+                          ),
+                          DropdownMenuItem(
+                            child: Text('Lock screen'),
+                            value: 'LOCK_SCREEN',
+                          ),
+                          DropdownMenuItem(
+                            child: Text('Both'),
+                            value: 'BOTH_SCREEN',
+                          ),
+                        ],
+                        onChanged: (String value) {
+                          setState(() => _value = value);
+                        },
+                      ),
+                    ),
                     actions: [
                       kIsWeb
                           ? Text("")
@@ -167,34 +231,16 @@ class _BodyState extends State<Body> {
                     onTap: () {
                       kIsWeb || Platform.isIOS
                           ? _launchURL(widget.imgPath)
-                          : print(widget.imgPath);
-                      _setWallpaper();
-                      // print(path);
-                      // : _askPermission();
-                      // progressString =
-                      //     Wallpaper.ImageDownloadProgress(widget.imgPath);
-                      // progressString.listen((data) {
-                      //   setState(() {
-                      //     res = data;
-                      //     downloading = true;
-                      //   });
-                      //   print("data recieved: $data");
-                      // }, onDone: () async {
-                      //   String home = await Wallpaper.homeScreen();
-                      //   setState(() {
-                      //     downloading = false;
-                      //     home = home;
-                      //   });
-                      //   print("task done");
-                      // }, onError: (error) {
-                      //   print(error);
-                      //   setState(() {
-                      //     downloading = false;
-                      //   });
-                      // });
+                          : _value == "HOME_SCREEN"
+                              ? _setHomeWallpaper()
+                              // ignore: unnecessary_statements
+                              : null;
+                      // ignore: unnecessary_statements
+                      _value == "LOCK_SCREEN" ? _setLockWallpaper() : null;
+                      // ignore: unnecessary_statements
+                      _value == "BOTH_SCREENS" ? _setBothWallpaper() : null;
                     },
-                    // ignore: todo
-                    //TODO: impliment proper wallpaper setup for mobile
+                    // // -TODO: impliment proper wallpaper setup for mobile
                     child: Stack(
                       children: <Widget>[
                         Container(

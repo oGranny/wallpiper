@@ -7,6 +7,7 @@ import 'package:wallpiper/pages/fullPage.dart';
 // ignore: unused_element
 Widget newGrid({@required List wallpapers}) {
   return StaggeredGridView.countBuilder(
+    physics: BouncingScrollPhysics(),
     padding: const EdgeInsets.all(8.0),
     crossAxisCount: 4,
     itemCount: wallpapers.length,
@@ -37,7 +38,7 @@ Widget newGrid({@required List wallpapers}) {
               child: FadeInImage(
                 image: NetworkImage(imgPath),
                 fit: BoxFit.cover,
-                placeholder: AssetImage("assets/splash.png"),
+                placeholder: AssetImage("assets/giphy.gif"),
               ),
             ),
           ),
@@ -85,7 +86,7 @@ Widget searchGrid({@required String query}) {
               child: FadeInImage(
                 image: NetworkImage(imgPath),
                 fit: BoxFit.cover,
-                placeholder: AssetImage("assets/splash.png"),
+                placeholder: AssetImage("assets/giphy.gif"),
               ),
             ),
           ),

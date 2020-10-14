@@ -63,7 +63,7 @@ class _CategoryBState extends State<CategoryB> {
                               "assets/categories/${categories[index].title}.jpeg"
                               // fit: BoxFit.fill,
                               ),
-                          placeholder: AssetImage("assets/splash.png"),
+                          placeholder: AssetImage("assets/giphy.gif"),
                         ),
                       ),
                     ),
