@@ -34,7 +34,7 @@ class MainWidgetState extends State<MainWidget> {
   @override
   Widget build(BuildContext ctx) {
     return Scaffold(
-      appBar: appBar(),
+      appBar: appBar(context),
       backgroundColor: Colors.white,
       body: PageStorage(child: currentScreen, bucket: bucket),
       bottomNavigationBar: bmnav.BottomNav(

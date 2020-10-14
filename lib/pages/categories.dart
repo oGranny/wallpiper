@@ -10,7 +10,7 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(),
+      appBar: appBar(context),
       bottomNavigationBar: normalNavBar(context),
       body: CategoryB(),
     );
@@ -45,13 +45,13 @@ class _CategoryBState extends State<CategoryB> {
                   padding: const EdgeInsets.all(5.0),
                   child: Center(
                     child: InkWell(
-                      onTap: () {
+                      onTap: () async {
+                        searchQuery = [];
+                        await fetchSearch1(categories[index].title);
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Search(
-                                  // query: searchController.text,
-                                  ),
+                              builder: (context) => SearchMain(),
                             ));
                       },
                       child: ClipRRect(

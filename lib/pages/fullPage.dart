@@ -3,9 +3,11 @@ import 'dart:typed_data';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:wallpaper_manager/wallpaper_manager.dart';
 
 var path;
 List favourate = List();
@@ -53,6 +55,14 @@ class _BodyState extends State<Body> {
     } else {
       throw 'Could not launch $url';
     }
+  }
+
+  _setWallpaper() async {
+    int location = WallpaperManager
+        .HOME_SCREEN; // or location = WallpaperManager.LOCK_SCREEN;
+    String result;
+    var file = await DefaultCacheManager().getSingleFile(widget.imgPath);
+    result = await WallpaperManager.setWallpaperFromFile(file.path, location);
   }
 
   @override
@@ -158,6 +168,7 @@ class _BodyState extends State<Body> {
                       kIsWeb || Platform.isIOS
                           ? _launchURL(widget.imgPath)
                           : print(widget.imgPath);
+                      _setWallpaper();
                       // print(path);
                       // : _askPermission();
                       // progressString =

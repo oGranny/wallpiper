@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(),
+      appBar: appBar(context),
       bottomNavigationBar: BottomNavBar(),
       body: HomeBody(),
     );
@@ -94,8 +94,6 @@ class _BodyState extends State<HomeBody> {
       });
     }
 
-// String myText;
-
     Widget searchBar(
         BuildContext context, TextEditingController searchController) {
       return wallpapers != null
@@ -117,21 +115,20 @@ class _BodyState extends State<HomeBody> {
                           border: InputBorder.none),
                     )),
                     InkWell(
-                        onTap: () {
+                        onTap: () async {
                           // searchQuery = [];
                           // print(searchController.text);
                           // print(wallpapers);
                           // print(categories);
                           // fetchSearch(searchController.text);
-                          // fetchSearch(searchController.text);
                           // print(searchQuery);
                           if (searchController.text != "") {
+                            searchQuery = [];
+                            await fetchSearch1(searchController.text);
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Search(
-                                      // query: searchController.text,
-                                      ),
+                                  builder: (context) => SearchMain(),
                                 ));
                           }
                         },
