@@ -57,7 +57,7 @@
 | ---------------------------------------- | -------------------------------------------- |
 |                                          |                                              |
 
-| ![img](assets/screenshots/favourates_page.png) | ![img](assets/screenshots/about_page.png) |
+| ![img](assets/screenshots/favourates_page.png) | ![img](assets/screenshots/about_Page.png) |
 | ---------------------------------------------- | ----------------------------------------- |
 
 Wallpiper is a wallpaper app built for android, IOS as well as for web using Google's **Flutter** framework in **Android** one can directly change `lock screen wallpaper` or `home screen wallpaper` using the app where as in IOS and web you have to manually do it.
