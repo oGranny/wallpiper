@@ -27,7 +27,7 @@
     ·
     <a href="https://github.com/oGranny/wallpiper/issues">Report Bug</a>
     ·
-    <a href="https://github.com/oGranny/wallpiper/">Download app</a>
+    <a href="https://wallpiper.web.app/wallpiper.apk">Download app</a>
   </p>
 </p>
 
