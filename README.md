@@ -136,7 +136,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@oGranny](https://github.com/oGranny/) - ogranny.github.io@gmail.com
+Mohit Sharma - [@oGranny](https://github.com/oGranny/) - ogranny.github.io@gmail.com
 
 Project Link: [https://github.com/oGranny/wallpiper](https://github.com/oGranny/wallpiper)
 
