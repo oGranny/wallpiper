@@ -149,7 +149,7 @@ class _BodyState extends State<Body> {
                         icon: Icon(Icons.close),
                         tooltip: "close",
                         onPressed: () => Navigator.of(context).pop()),
-                    title: DropdownButtonHideUnderline(
+                    title: kIsWeb ? DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
                         value: _value,
                         items: <DropdownMenuItem<String>>[
@@ -170,7 +170,7 @@ class _BodyState extends State<Body> {
                           setState(() => _value = value);
                         },
                       ),
-                    ),
+                    ) : Text(""),
                     actions: [
                       kIsWeb
                           ? Text("")
